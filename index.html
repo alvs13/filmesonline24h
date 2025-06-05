@@ -3,26 +3,85 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FilmesOnline24h</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal video {
+      width: 80%;
+      max-width: 800px;
+      border-radius: 8px;
+    }
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      color: #fff;
+      font-size: 30px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>🎬 FilmesOnline24h</h1>
-    <input type="text" placeholder="Buscar filmes..." id="searchInput" />
-  </header>
-  <nav>
-    <button onclick="filterGenre('28')">Ação</button>
-    <button onclick="filterGenre('35')">Comédia</button>
-    <button onclick="filterGenre('27')">Terror</button>
-    <button onclick="filterGenre('10749')">Romance</button>
-    <button onclick="filterGenre('16')">Animação</button>
-  </nav>
-  <main id="moviesGrid"></main>
-  <footer>
-    <p>&copy; 2025 FilmesOnline24h - Todos os direitos reservados.</p>
-  </footer>
-  <script src="js/script.js"></script>
+  <header><h1>🎬 FilmesOnline24h</h1></header>
+  <main id="filmes" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; padding: 1rem;"></main>
+
+  <div id="modal" class="modal">
+    <span class="close-btn" onclick="fecharModal()">&times;</span>
+    <video id="videoPlayer" controls autoplay></video>
+  </div>
+
+  <script>
+    const container = document.getElementById('filmes');
+    const modal = document.getElementById('modal');
+    const videoPlayer = document.getElementById('videoPlayer');
+
+    function abrirModal(link) {
+      videoPlayer.src = link;
+      modal.style.display = 'flex';
+    }
+
+    function fecharModal() {
+      videoPlayer.pause();
+      videoPlayer.src = "";
+      modal.style.display = 'none';
+    }
+
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      if (key.startsWith('filme-')) {
+        const filme = JSON.parse(localStorage.getItem(key));
+        const card = document.createElement('div');
+        card.style.background = '#111';
+        card.style.padding = '10px';
+        card.style.borderRadius = '8px';
+        card.style.color = '#fff';
+        const capaClick = filme.customButton ? `onclick="abrirModal('${filme.customButton.link}')"` : "";
+
+        card.innerHTML = `
+          <img src="https://image.tmdb.org/t/p/w500${filme.poster_path}" alt="${filme.title}" style="width:100%; border-radius:8px; cursor:pointer;" ${capaClick} />
+          <h3>${filme.title}</h3>
+          <p>${filme.release_date}</p>
+          ${filme.customButton ? `<a href="#" onclick="abrirModal('${filme.customButton.link}')" style="display:inline-block;background:#f00;color:#fff;padding:8px 12px;border-radius:4px;text-decoration:none;margin-top:5px;">${filme.customButton.text}</a>` : ""}
+        `;
+        container.appendChild(card);
+      }
+    }
+
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        fecharModal();
+      }
+    }
+  </script>
 </body>
 </html>
