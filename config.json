@@ -1,0 +1,13 @@
+
+{
+    "theme": {
+        "background": "#121212",
+        "text": "#eeeeee",
+        "button": "#4caf50",
+        "headerBackground": "#1f1f1f"
+    },
+    "images": {
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Film_icon.svg",
+        "banner": "https://images.unsplash.com/photo-1517602302552-471fe67acf66?auto=format&fit=crop&w=1350&q=80"
+    }
+}

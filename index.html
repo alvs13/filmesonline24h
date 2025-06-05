@@ -2,20 +2,34 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FilmesOnline24h</title>
-    <link href="style.css" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FilmesOnline24h</title>
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <h1>FilmesOnline24h</h1>
-        <input type="text" id="search" placeholder="Buscar filmes...">
-    </header>
-    <main id="filmes-container"></main>
-    <footer>
-        <p>&copy; 2025 FilmesOnline24h - Filmes de domínio público</p>
-    </footer>
-    <script src="script.js"></script>
+<header>
+  <div class="logo">FilmesOnline24h</div>
+  <nav>
+    <input type="text" id="search" placeholder="Buscar filmes..." />
+  </nav>
+</header>
+
+<section id="carousel">
+  <h2>Destaques</h2>
+  <div class="carousel-container" id="carousel-container"></div>
+</section>
+
+<section id="categories">
+  <h2>Categorias</h2>
+  <div id="category-buttons"></div>
+</section>
+
+<section id="movie-list">
+  <h2>Todos os filmes</h2>
+  <div id="movies-container"></div>
+</section>
+
+<script src="script.js"></script>
 </body>
 </html>
