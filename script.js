@@ -33,7 +33,7 @@ async function fetchGenres() {
 async function loadMovies() {
   let url = '';
   if (currentMode === 'popular') {
-    url = `${BASE_URL}/movie/popular?api_key=${API_KEY}&language=pt-BR&page=${currentPage}`;
+    url = `${BASE_URL}/discover/movie?sort_by=release_date.desc&api_key=${API_KEY}&language=pt-BR&page=${currentPage}`;
   } else if (currentMode === 'search') {
     url = `${BASE_URL}/search/movie?api_key=${API_KEY}&language=pt-BR&query=${encodeURIComponent(currentQuery)}&page=${currentPage}`;
   } else if (currentMode === 'genre') {
@@ -54,7 +54,10 @@ function displayMovies(movies) {
       <img src="${IMG_URL + movie.poster_path}" alt="${movie.title}" />
       <h3>${movie.title}</h3>
     `;
+    
+    div.onclick = () => window.location.href = `movie.html?id=${movie.id}`;
     main.appendChild(div);
+    
   });
 }
 

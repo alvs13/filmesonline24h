@@ -71,3 +71,10 @@ main#movies {
   border-radius: 5px;
   cursor: pointer;
 }
+
+#admin-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #4caf50;
+  text-decoration: none;
+}
