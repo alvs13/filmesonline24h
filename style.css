@@ -1,7 +1,9 @@
-
+* {
+  box-sizing: border-box;
+}
 body {
   margin: 0; padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #121212;
   color: #eee;
 }
@@ -16,49 +18,85 @@ header {
   z-index: 1000;
 }
 .logo {
-  font-weight: bold;
-  font-size: 1.5em;
+  font-weight: 700;
+  font-size: 1.8em;
+  cursor: pointer;
 }
 nav input {
-  padding: 6px 10px;
+  width: 250px;
+  padding: 7px 10px;
   border-radius: 5px;
   border: none;
   outline: none;
+  font-size: 1em;
 }
 section {
-  margin: 80px 20px 20px 20px;
+  margin: 90px 20px 20px 20px;
 }
-#carousel-container, #movies-container {
+h2 {
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+#carousel-container, #movies-container, #category-buttons {
   display: flex;
   gap: 15px;
   overflow-x: auto;
   padding-bottom: 10px;
 }
-.movie-card {
-  min-width: 150px;
-  background: #222;
-  border-radius: 8px;
-  overflow: hidden;
+#category-buttons button {
+  background-color: #333;
+  border: none;
+  color: #eee;
+  padding: 8px 15px;
+  border-radius: 20px;
   cursor: pointer;
-  transition: transform 0.2s;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+#category-buttons button:hover, #category-buttons button.active {
+  background-color: #4caf50;
+}
+.movie-card {
+  background-color: #222;
+  border-radius: 8px;
+  min-width: 160px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
 }
 .movie-card:hover {
   transform: scale(1.05);
 }
 .movie-card img {
   width: 100%;
-  height: auto;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  height: 240px;
+  object-fit: cover;
 }
 .movie-info {
   padding: 10px;
 }
 .movie-info h3 {
-  margin: 0 0 5px 0;
+  margin: 0 0 8px 0;
   font-size: 1em;
+  font-weight: 700;
 }
 .movie-info p {
-  font-size: 0.9em;
+  font-size: 0.85em;
   color: #bbb;
   height: 40px;
   overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media(max-width: 600px) {
+  nav input {
+    width: 150px;
+  }
+  .movie-card {
+    min-width: 130px;
+  }
+  .movie-card img {
+    height: 190px;
+  }
 }
