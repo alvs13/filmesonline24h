@@ -1,102 +1,73 @@
-* {
-  box-sizing: border-box;
-}
+
 body {
-  margin: 0; padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #121212;
-  color: #eee;
+  background: #0f0f0f;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  margin: 0;
 }
 header {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  background-color: #1f1f1f;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 1000;
+  background: #1a1a1a;
+  padding: 20px;
+  text-align: center;
 }
-.logo {
-  font-weight: 700;
-  font-size: 1.8em;
-  cursor: pointer;
+header h1 {
+  margin: 0;
+  font-size: 2em;
 }
-nav input {
-  width: 250px;
-  padding: 7px 10px;
+#search {
+  padding: 10px;
+  margin-top: 10px;
+  width: 90%;
+  max-width: 400px;
   border-radius: 5px;
   border: none;
-  outline: none;
-  font-size: 1em;
 }
-section {
-  margin: 90px 20px 20px 20px;
-}
-h2 {
-  margin-bottom: 15px;
-  font-weight: 700;
-}
-#carousel-container, #movies-container, #category-buttons {
+nav#genres {
   display: flex;
-  gap: 15px;
-  overflow-x: auto;
-  padding-bottom: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
 }
-#category-buttons button {
-  background-color: #333;
+nav#genres button {
+  background: #222;
   border: none;
-  color: #eee;
+  color: #fff;
   padding: 8px 15px;
   border-radius: 20px;
   cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
 }
-#category-buttons button:hover, #category-buttons button.active {
-  background-color: #4caf50;
+main#movies {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 15px;
+  padding: 20px;
 }
 .movie-card {
-  background-color: #222;
-  border-radius: 8px;
-  min-width: 160px;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-  flex-shrink: 0;
-}
-.movie-card:hover {
-  transform: scale(1.05);
+  background: #1c1c1c;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
 }
 .movie-card img {
   width: 100%;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  height: 240px;
-  object-fit: cover;
+  border-radius: 10px;
 }
-.movie-info {
-  padding: 10px;
-}
-.movie-info h3 {
-  margin: 0 0 8px 0;
+.movie-card h3 {
   font-size: 1em;
-  font-weight: 700;
+  margin: 10px 0 0;
 }
-.movie-info p {
-  font-size: 0.85em;
-  color: #bbb;
-  height: 40px;
-  overflow: hidden;
-  text-overflow: ellipsis;
+#pagination {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
 }
-@media(max-width: 600px) {
-  nav input {
-    width: 150px;
-  }
-  .movie-card {
-    min-width: 130px;
-  }
-  .movie-card img {
-    height: 190px;
-  }
+#pagination button {
+  background: #333;
+  color: #fff;
+  border: none;
+  margin: 0 5px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
 }
