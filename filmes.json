@@ -1,0 +1,20 @@
+[
+    {
+        "title": "A Viagem \u00e0 Lua (1902)",
+        "description": "Primeiro filme de fic\u00e7\u00e3o cient\u00edfica da hist\u00f3ria, dirigido por Georges M\u00e9li\u00e8s.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Le_Voyage_dans_la_lune.jpg/800px-Le_Voyage_dans_la_lune.jpg",
+        "video": "https://www.youtube.com/watch?v=7JDaOOw0MEE"
+    },
+    {
+        "title": "O Gabinete do Dr. Caligari (1920)",
+        "description": "Um cl\u00e1ssico expressionista alem\u00e3o dirigido por Robert Wiene.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Das_Cabinet_des_Dr._Caligari_%281920%29.jpg/800px-Das_Cabinet_des_Dr._Caligari_%281920%29.jpg",
+        "video": "https://www.youtube.com/watch?v=BuocVLKdSqQ"
+    },
+    {
+        "title": "Nosferatu (1922)",
+        "description": "Primeira adapta\u00e7\u00e3o do Dr\u00e1cula para o cinema, dirigido por F.W. Murnau.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Nosferatu_1922.jpg/800px-Nosferatu_1922.jpg",
+        "video": "https://www.youtube.com/watch?v=FC6jFoYm3xs"
+    }
+]
