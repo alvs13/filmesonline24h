@@ -32,7 +32,54 @@
     letter-spacing: 4px;
   }
   main {
-    padding-top: 70px;
+    padding-top: 170px; /* espaço para header + form */
+  }
+  /* Formulário para adicionar filme */
+  section#addMovieSection {
+    padding: 10px 40px;
+    background: #222;
+    color: white;
+    position: fixed;
+    top: 60px;
+    left: 0; right: 0;
+    z-index: 11;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  section#addMovieSection h3 {
+    margin-right: 10px;
+    white-space: nowrap;
+  }
+  section#addMovieSection input {
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  section#addMovieSection input[type="text"]:nth-child(2) {
+    width: 300px;
+  }
+  section#addMovieSection input[type="text"]:nth-child(3) {
+    width: 350px;
+  }
+  section#addMovieSection button {
+    padding: 6px 12px;
+    background: #e50914;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: 700;
+    border-radius: 3px;
+  }
+  section#addMovieSection small {
+    display: block;
+    width: 100%;
+    color: #ccc;
+    font-size: 12px;
+    margin-top: 5px;
   }
   /* Banner */
   .banner {
@@ -169,6 +216,20 @@
     .poster {
       max-height: 120px;
     }
+    section#addMovieSection {
+      flex-direction: column;
+      align-items: flex-start;
+      height: auto;
+      position: static;
+      padding: 10px 20px;
+    }
+    section#addMovieSection input {
+      width: 100% !important;
+      margin-bottom: 6px;
+    }
+    section#addMovieSection button {
+      width: 100%;
+    }
   }
 </style>
 </head>
@@ -177,6 +238,16 @@
 <header>
   <div class="logo">NETFLIX</div>
 </header>
+
+<!-- Formulário para adicionar filme -->
+<section id="addMovieSection">
+  <h3>Adicionar Filme</h3>
+  <input id="inputTitle" type="text" placeholder="Título do filme" />
+  <input id="inputPoster" type="text" placeholder="URL do poster" />
+  <input id="inputVideo" type="text" placeholder="URL do vídeo (YouTube embed)" />
+  <button id="addMovieBtn">Adicionar</button>
+  <small>Exemplo vídeo: https://www.youtube.com/embed/SUXWAEX2jlg</small>
+</section>
 
 <main>
 
@@ -306,7 +377,7 @@
     }
   });
 
-  // Mostrar filmes
+  // Mostrar filmes inicialmente
   createPosters(moviesPopular, rowPosters1);
   createPosters(moviesMostViewed, rowPosters2);
 
@@ -324,6 +395,31 @@
     alert("Mais info sobre: " + moviesPopular[0].title);
   });
 
+  // Adicionar filme via formulário
+  const inputTitle = document.getElementById('inputTitle');
+  const inputPoster = document.getElementById('inputPoster');
+  const inputVideo = document.getElementById('inputVideo');
+  const addMovieBtn = document.getElementById('addMovieBtn');
+
+  addMovieBtn.addEventListener('click', () => {
+    const title = inputTitle.value.trim();
+    const poster = inputPoster.value.trim();
+    const video = inputVideo.value.trim();
+
+    if(!title || !poster || !video) {
+      alert('Preencha todos os campos para adicionar o filme!');
+      return;
+    }
+
+    const newMovie = { title, poster, video };
+    moviesPopular.push(newMovie);
+    createPosters(moviesPopular, rowPosters1);
+
+    // Limpar inputs
+    inputTitle.value = '';
+    inputPoster.value = '';
+    inputVideo.value = '';
+  });
 </script>
 
 </body>
