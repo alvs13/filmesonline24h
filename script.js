@@ -1,4 +1,4 @@
-const API_KEY = 'YOUR_API_KEY_HERE'; // Troque pela sua API key TMDb
+const API_KEY = 'f4e6f6b42c9aa2c3e64a46a8c5c1fa45';
 const BASE_URL = 'https://api.themoviedb.org/3';
 const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500';
 
@@ -53,7 +53,6 @@ function carregarFilmesCategoria(id, botao) {
     .then(data => {
       filmesFiltrados = data.results;
       carregarFilmes(filmesFiltrados);
-      // marcar botão ativo
       document.querySelectorAll('#category-buttons button').forEach(b => b.classList.remove('active'));
       botao.classList.add('active');
     });
