@@ -1,80 +1,64 @@
 
 body {
-  background: #0f0f0f;
-  color: #fff;
+  margin: 0; padding: 0;
   font-family: Arial, sans-serif;
-  margin: 0;
+  background-color: #121212;
+  color: #eee;
 }
 header {
-  background: #1a1a1a;
-  padding: 20px;
-  text-align: center;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background-color: #1f1f1f;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
 }
-header h1 {
-  margin: 0;
-  font-size: 2em;
+.logo {
+  font-weight: bold;
+  font-size: 1.5em;
 }
-#search {
-  padding: 10px;
-  margin-top: 10px;
-  width: 90%;
-  max-width: 400px;
+nav input {
+  padding: 6px 10px;
   border-radius: 5px;
   border: none;
+  outline: none;
 }
-nav#genres {
+section {
+  margin: 80px 20px 20px 20px;
+}
+#carousel-container, #movies-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  padding: 10px;
-}
-nav#genres button {
-  background: #222;
-  border: none;
-  color: #fff;
-  padding: 8px 15px;
-  border-radius: 20px;
-  cursor: pointer;
-}
-main#movies {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   gap: 15px;
-  padding: 20px;
+  overflow-x: auto;
+  padding-bottom: 10px;
 }
 .movie-card {
-  background: #1c1c1c;
-  padding: 10px;
-  border-radius: 10px;
-  text-align: center;
+  min-width: 150px;
+  background: #222;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.movie-card:hover {
+  transform: scale(1.05);
 }
 .movie-card img {
   width: 100%;
-  border-radius: 10px;
+  height: auto;
 }
-.movie-card h3 {
+.movie-info {
+  padding: 10px;
+}
+.movie-info h3 {
+  margin: 0 0 5px 0;
   font-size: 1em;
-  margin: 10px 0 0;
 }
-#pagination {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-}
-#pagination button {
-  background: #333;
-  color: #fff;
-  border: none;
-  margin: 0 5px;
-  padding: 8px 12px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#admin-link {
-  display: inline-block;
-  margin-top: 10px;
-  color: #4caf50;
-  text-decoration: none;
+.movie-info p {
+  font-size: 0.9em;
+  color: #bbb;
+  height: 40px;
+  overflow: hidden;
 }

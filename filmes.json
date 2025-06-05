@@ -1,20 +1,38 @@
+
 [
     {
-        "title": "A Viagem \u00e0 Lua (1902)",
-        "description": "Primeiro filme de fic\u00e7\u00e3o cient\u00edfica da hist\u00f3ria, dirigido por Georges M\u00e9li\u00e8s.",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Le_Voyage_dans_la_lune.jpg/800px-Le_Voyage_dans_la_lune.jpg",
-        "video": "https://www.youtube.com/watch?v=7JDaOOw0MEE"
+        "title": "O Gabinete do Dr. Caligari",
+        "description": "Clássico expressionista do terror alemão.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Das_Kabinet_des_Doktor_Caligari_%281919%29.jpg/220px-Das_Kabinet_des_Doktor_Caligari_%281919%29.jpg",
+        "video": "https://www.youtube.com/watch?v=FC6jFoYm3xs",
+        "category": "Clássicos"
     },
     {
-        "title": "O Gabinete do Dr. Caligari (1920)",
-        "description": "Um cl\u00e1ssico expressionista alem\u00e3o dirigido por Robert Wiene.",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Das_Cabinet_des_Dr._Caligari_%281920%29.jpg/800px-Das_Cabinet_des_Dr._Caligari_%281920%29.jpg",
-        "video": "https://www.youtube.com/watch?v=BuocVLKdSqQ"
+        "title": "Planeta Terra",
+        "description": "Documentário sobre a beleza natural do planeta.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Earth_from_Space.jpg",
+        "video": "https://www.youtube.com/watch?v=46NkbM3F9z0",
+        "category": "Em Alta"
     },
     {
-        "title": "Nosferatu (1922)",
-        "description": "Primeira adapta\u00e7\u00e3o do Dr\u00e1cula para o cinema, dirigido por F.W. Murnau.",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Nosferatu_1922.jpg/800px-Nosferatu_1922.jpg",
-        "video": "https://www.youtube.com/watch?v=FC6jFoYm3xs"
+        "title": "A Viagem de Chihiro",
+        "description": "Filme de animação japonês premiado.",
+        "image": "https://upload.wikimedia.org/wikipedia/en/3/30/Spirited_Away_poster.JPG",
+        "video": "https://www.youtube.com/watch?v=ByXuk9QqQkk",
+        "category": "Lançamentos"
+    },
+    {
+        "title": "Breaking Bad - Episódio 1",
+        "description": "Primeiro episódio da série Breaking Bad.",
+        "image": "https://upload.wikimedia.org/wikipedia/en/6/61/Breaking_Bad_title_card.png",
+        "video": "https://www.youtube.com/watch?v=HhesaQXLuRY",
+        "category": "Séries"
+    },
+    {
+        "title": "Cidade de Deus",
+        "description": "Filme brasileiro premiado mundialmente.",
+        "image": "https://upload.wikimedia.org/wikipedia/pt/thumb/6/67/Cidade_de_Deus_-_filme.jpg/220px-Cidade_de_Deus_-_filme.jpg",
+        "video": "https://www.youtube.com/watch?v=iochzWCh1n8",
+        "category": "Clássicos"
     }
 ]

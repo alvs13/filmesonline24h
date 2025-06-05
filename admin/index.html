@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Painel de Controle</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header><h1>🔐 Painel de Controle</h1></header>
+  <main style="max-width: 600px; margin: auto;">
+    <input type="text" id="movieId" placeholder="ID do Filme (TMDb)" />
+    <button onclick="addMovie()">Adicionar</button>
+    <p id="status"></p>
+  </main>
+  <script>
+    const API_KEY = '93eaa6dd762bc810780c57a34e60b6f1';
+    function addMovie() {
+      const id = document.getElementById('movieId').value;
+      if (!id) return;
+      fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`)
+        .then(res => res.json())
+        .then(data => {
+          localStorage.setItem(`filme-${id}`, JSON.stringify(data));
+          document.getElementById('status').innerText = 'Filme adicionado!';
+        });
+    }
+  </script>
+</body>
+</html>
